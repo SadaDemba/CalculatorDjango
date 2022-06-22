@@ -80,8 +80,7 @@ WSGI_APPLICATION = 'WebCalculator.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': ,
-        'NAME': ,
+        
     }
 }
 
