@@ -12,6 +12,16 @@ class Operation:
 
     def getResult(self):
         return self.res
+    
+    
+    def addition(self):
+        if self.num1.isnumeric() and self.num2.isnumeric():
+            a = int(self.num1)
+            b = int(self.num2)
+            c = a+b
+            self.setResult(c)
+        else:
+            self.setResult("Caractère non permis")
 
     
     
@@ -21,5 +31,17 @@ class Operation:
             b = int(self.num2)
             c = a*b
             self.setResult(c)
+        else:
+            self.setResult("Caractère non permis")
+
+    def division(self):
+        if self.num1.isnumeric() and self.num2.isnumeric():
+            a = int(self.num1)
+            b = int(self.num2)
+            if b == 0:
+                self.setResult("Impossible de diviser par 0")
+            else:
+                c = a / b
+                self.setResult(c)
         else:
             self.setResult("Caractère non permis")
