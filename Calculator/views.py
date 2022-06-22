@@ -13,6 +13,13 @@ def addition(request):
     op.addition()
     return render(request, "result.html", {"result": op.getResult()})
 
+def subtraction(request):
+
+    num1 = request.POST['num1']
+    num2 = request.POST['num2']
+    op=Operation(num1,num2)
+    op.soustraction()
+    return render(request, "result.html", {"result": op.getResult()})
 
 def multiplication(request):
 

@@ -1,41 +1,123 @@
 {% extends 'basic.html' %}
 
 {% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-<h1>Addition</h1>
-<form action="add" method="POST">
-    {% csrf_token %}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    Enter first number: <input type="text" name="num1"><br><br>
-    Enter second number: <input type="text" name="num2"><br><br>
-    <input type="submit">
-</form>
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px 10px;
+}
 
-<h1>Subtraction</h1>
-<form action="sub" method="POST">
-    {% csrf_token %}
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
 
-    Enter first number: <input type="text" name="num1"><br><br>
-    Enter second number: <input type="text" name="num2"><br><br>
-    <input type="submit">
-</form>
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-<h1>Multiplication</h1>
-<form action="multi" method="POST">
-    {% csrf_token %}
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+input[type=text], select {
+  width: 40%;
+  height: 25px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
 
-    Enter first number: <input type="text" name="num1"><br><br>
-    Enter second number: <input type="text" name="num2"><br><br>
-    <input type="submit">
-</form>
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #bbb8b8;
+}
+</style>
+</head>
+<body>
 
-<h1>Division</h1>
-<form action="div" method="POST">
-    {% csrf_token %}
+<h2>The Web Calculator</h2>
+<p></p>
 
-    Enter first number: <input type="text" name="num1"><br><br>
-    Enter second number: <input type="text" name="num2"><br><br>
-    <input type="submit">
-</form>
+<div class="row">
+  <div class="column">
+    <div class="card">
+        <h1>Addition</h1>
+        <form action="add" method="POST">
+            {% csrf_token %}
+        
+            Enter first number: <input type="text" name="num1"><br><br>
+            Enter second number: <input type="text" name="num2"><br><br>
+            <input type="submit">
+        </form>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+        <h1>Subtraction</h1>
+        <form action="sub" method="POST">
+            {% csrf_token %}
+        
+            Enter first number: <input type="text" name="num1"><br><br>
+            Enter second number: <input type="text" name="num2"><br><br>
+            <input type="submit">
+        </form>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+        <h1>Multiplication</h1>
+        <form action="multi" method="POST">
+            {% csrf_token %}
+        
+            Enter first number: <input type="text" name="num1"><br><br>
+            Enter second number: <input type="text" name="num2"><br><br>
+            <input type="submit">
+        </form>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+        <h1>Division</h1>
+        <form action="div" method="POST">
+            {% csrf_token %}
+        
+            Enter first number: <input type="text" name="num1"><br><br>
+            Enter second number: <input type="text" name="num2"><br><br>
+            <input type="submit">
+        </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
 
 {% endblock %}

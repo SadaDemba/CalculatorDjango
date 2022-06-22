@@ -13,6 +13,15 @@ class TestOperations(TestCase):
         addition2.addition()
         self.assertEqual(addition2.getResult(),"Caractère non permis","Succès du test!")
 
+    def testSoustraction(self):
+        soustraction1=Operation('10','5')
+        soustraction1.soustraction()
+        self.assertEqual(soustraction1.getResult(),5,"Succès du test!")
+
+        soustraction2=Operation('10a','4')
+        soustraction2.soustraction()
+        self.assertEqual(soustraction2.getResult(),"Caractère non permis","Succès du test!")
+    
     
     def testMultiplication(self):
         multiplication1=Operation('10','5')

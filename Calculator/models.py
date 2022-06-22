@@ -23,7 +23,14 @@ class Operation:
         else:
             self.setResult("Caractère non permis")
 
-    
+    def soustraction(self):
+        if self.num1.isnumeric() and self.num2.isnumeric():
+            a = int(self.num1)
+            b = int(self.num2)
+            c = a-b
+            self.setResult(c)
+        else:
+            self.setResult("Caractère non permis")
     
     def multiplication(self):
         if self.num1.isnumeric() and self.num2.isnumeric():
