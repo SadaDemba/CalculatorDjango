@@ -21,7 +21,7 @@ class Operation:
             c = a+b
             self.setResult(c)
         else:
-            self.setResult("Désolé! Caractère non permis")
+            self.setResult("Caractère non permis")
 
     def soustraction(self):
         if self.num1.isnumeric() and self.num2.isnumeric():

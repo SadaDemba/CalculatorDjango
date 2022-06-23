@@ -11,7 +11,7 @@ class TestOperations(TestCase):
 
         addition2=Operation('10a','4')
         addition2.addition()
-        self.assertEqual(addition2.getResult(),"Désolé! Caractère non permis","Succès du test!")
+        self.assertEqual(addition2.getResult(),"Caractère non permis","Succès du test!")
 
     def testSoustraction(self):
         soustraction1=Operation('10','5')
